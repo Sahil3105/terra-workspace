@@ -1,5 +1,5 @@
-resource "aws_key_pair" "demo" {
-  key_name   = "terra-key-ec2"
+resource "aws_key_pair" "demo1" {
+  key_name   = "terra-key-ec2-new"
   public_key = file("terra-key-ec2.pub")
 }
 
@@ -50,7 +50,7 @@ resource "aws_security_group" "allow_user_to_connect" {
 resource "aws_instance" "testinstance1" {
   ami                    = "ami-0360c520857e3138f"
   instance_type          = "t2.micro"
-  key_name               = aws_key_pair.demo.key_name
+  key_name               = aws_key_pair.demo1.key_name
   vpc_security_group_ids = [aws_security_group.allow_user_to_connect.id]
 
   root_block_device {
