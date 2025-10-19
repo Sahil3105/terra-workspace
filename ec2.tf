@@ -59,6 +59,6 @@ resource "aws_instance" "testinstance" {
   }
 
   tags = {
-    Name = "Terra-Automate"
+    Name = "Dev-Instance"
   }
 }
