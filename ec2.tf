@@ -6,7 +6,7 @@ resource "aws_key_pair" "demo" {
 resource "aws_default_vpc" "defvpc" {}
 
 resource "aws_security_group" "allow_user_to_connect" {
-  name        = "terra-sg"
+  name        = "terra-sg1"
   description = "Allow user to connect"
   vpc_id      = aws_default_vpc.defvpc.id
 
@@ -47,7 +47,7 @@ resource "aws_security_group" "allow_user_to_connect" {
   }
 }
 
-resource "aws_instance" "testinstance" {
+resource "aws_instance" "testinstance1" {
   ami                    = "ami-0360c520857e3138f"
   instance_type          = "t2.micro"
   key_name               = aws_key_pair.demo.key_name
